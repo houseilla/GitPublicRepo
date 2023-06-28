@@ -10,7 +10,7 @@ Current Process at a high level works as below:
 Requirement for M2 release is that the BaNCS as a policy Admin system would generate the daily data extract in the form of csv file that will be consumed by SL Admin team for subsequent merger and analysis for detecting suspicious user behaviour
 
 The following fields are expected in the data extract. 
-1. Staff ID ---- 1
+1. Staff ID
 2. Full Name 
 3. Workflow Demand ID
 4. Business ID
@@ -38,5 +38,16 @@ Source 1. BaNCS Web (Page) Access Log that captures history of all accesses BaNC
 5. Policy No --- Identifies the policy displayed on the web page
 6. Schema ref No (when policy belongs to schema)
 7. Work item Reference No --- if the page accessed from work item context. 
+
+Source 2. Work item history data in BARD. When user is working on any Work item, BaNCS persists history of all changes to work item in a table. This work item history is populated to BARD as part of daily data replication between BaNCS OLTP database and BARD. Following are the relavent information that are available in Work item History. 
+1. Staff User ID
+2. Custoer Reff No --- Identify the customer associated with work item
+3. Policy No --- Identify the policy associated with work item
+4. Schema Reff No --- (when policy is belongs to schema) associated with work item
+5. Work type
+6. Work item state change Status
+7. Work item State change start time
+8. Work item State change end time
+9. Pending period (when work item is put to pend state)
 
 
